@@ -100,8 +100,8 @@ int main(int argc, char *argv[])
 	fflush(yuvFile);
 	fclose(yuvFile);
 
- 	execute_command(".\\jxs_encoder.exe -c \"profile=Main444.12;size=%d;slh=%d; l=unrestricted;s=unrestricted;fs=1;gains=8, 6, 6, 7, 5, 5, 7, 4, 4, 6, 4, 4, 5, 3, 3, 3, 1, 1, 3, 1, 1, 2, 0, 0;priorities=12, 15, 16, 8, 10, 11, 21, 1, 0, 9, 14, 13, 17, 18, 19, 3, 4, 5, 2, 6, 7, 20, 22, 23\" -w %d -h %d  temp.yuv  temp.jxs", encode_size, line_num, width_aligned, line_num);
-	execute_command(".\\convertEndian.exe -n 8  temp.jxs temp_LE.jxs");
+ 	execute_command("prebuild\\jxs_encoder.exe -c \"profile=Main444.12;size=%d;slh=%d; l=unrestricted;s=unrestricted;fs=1;gains=8, 6, 6, 7, 5, 5, 7, 4, 4, 6, 4, 4, 5, 3, 3, 3, 1, 1, 3, 1, 1, 2, 0, 0;priorities=12, 15, 16, 8, 10, 11, 21, 1, 0, 9, 14, 13, 17, 18, 19, 3, 4, 5, 2, 6, 7, 20, 22, 23\" -w %d -h %d  temp.yuv  temp.jxs", encode_size, line_num, width_aligned, line_num);
+	execute_command("prebuild\\convertEndian.exe -n 8  temp.jxs temp_LE.jxs");
 	//execute_command(".\\convertEndian.exe -n 8  chip_dump_black.bin temp_LE.jxs");
 
     // 创建输出文件以写入结果
